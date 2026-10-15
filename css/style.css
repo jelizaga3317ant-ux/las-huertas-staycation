@@ -1,0 +1,270 @@
+/* css/style.css */
+
+/* --- CSS Variables for #1A1E24 Base Theme --- */
+:root,
+[data-bs-theme="dark"] {
+    --bs-body-bg: #1A1E24;
+    --bs-body-color: #e9ecef;
+    --bs-secondary-bg: #21262d;
+    --bs-tertiary-bg: #2c313a;
+    --bs-border-color: #343a40;
+    --bs-primary: #c9a227;
+    --bs-primary-rgb: 201, 162, 39;
+    --bs-primary-text-emphasis: #e0b95c;
+    --bs-link-color: #c9a227;
+    --bs-link-hover-color: #e0b95c;
+    --bs-dark: #12151a;
+    --bs-dark-rgb: 18, 21, 26;
+}
+
+/* --- Global Adjustments --- */
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* --- Navigation --- */
+.navbar {
+    background-color: var(--bs-dark) !important;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--bs-body-color) !important;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand i {
+    color: var(--bs-primary);
+}
+
+.nav-link {
+    color: var(--bs-secondary-color) !important;
+}
+
+.nav-link.active {
+    color: var(--bs-primary) !important;
+    font-weight: 600;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    background-color: var(--bs-secondary-bg);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    padding: 5rem 2rem;
+    text-align: center;
+    border: 1px solid var(--bs-border-color);
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 30, 36, 0.9), rgba(33, 38, 45, 0.7));
+    z-index: 0;
+}
+
+.hero-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--bs-body-color);
+}
+
+.hero-section .lead {
+    color: var(--bs-secondary-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Unit Cards --- */
+.unit-card {
+    background-color: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.unit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    border-color: var(--bs-primary);
+}
+
+.unit-card img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.unit-card .card-body {
+    padding: 1.5rem;
+}
+
+.unit-card .card-title {
+    font-weight: 600;
+    color: var(--bs-body-color);
+}
+
+.unit-card .card-text {
+    color: var(--bs-secondary-color);
+    font-size: 0.9rem;
+}
+
+.unit-card .amenity-tag {
+    font-size: 0.75rem;
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-secondary-color);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2rem;
+    border: 1px solid var(--bs-border-color);
+    display: inline-block;
+    margin: 0.15rem;
+}
+
+/* --- Booking Form --- */
+.booking-form-container {
+    background-color: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+}
+
+.form-control, .form-select {
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--bs-tertiary-bg);
+    border-color: var(--bs-primary);
+    color: var(--bs-body-color);
+    box-shadow: 0 0 0 0.25rem rgba(201, 162, 39, 0.25);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    --bs-btn-bg: #c9a227;
+    --bs-btn-border-color: #c9a227;
+    --bs-btn-hover-bg: #e0b95c;
+    --bs-btn-hover-border-color: #e0b95c;
+    --bs-btn-active-bg: #b08d1f;
+    --bs-btn-active-border-color: #b08d1f;
+    --bs-btn-color: #1A1E24;
+    --bs-btn-hover-color: #1A1E24;
+    font-weight: 600;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #c9a227;
+    --bs-btn-border-color: #c9a227;
+    --bs-btn-hover-bg: #c9a227;
+    --bs-btn-hover-border-color: #c9a227;
+    --bs-btn-hover-color: #1A1E24;
+}
+
+/* --- Accordion --- */
+.accordion-item {
+    background-color: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
+}
+
+.accordion-button {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-primary);
+}
+
+.accordion-body {
+    color: var(--bs-secondary-color);
+}
+
+/* --- Section Titles --- */
+.section-title {
+    font-weight: 700;
+    color: var(--bs-body-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--bs-secondary-color);
+    margin-bottom: 2.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--bs-dark) !important;
+    border-top: 1px solid var(--bs-border-color) !important;
+}
+
+footer a:hover {
+    color: var(--bs-primary) !important;
+}
+/* Add to css/style.css */
+footer a.text-decoration-none:hover {
+    text-decoration: underline !important;
+    color: var(--bs-primary) !important;
+}
+/* --- Return to Top Button --- */
+.return-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circle shape */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.return-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.return-to-top i {
+    font-size: 1.25rem;
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+    .return-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
